@@ -11,7 +11,7 @@ return {
 		vim.api.nvim_create_autocmd("FileType", {
 			callback = function(args)
 				local ft = vim.bo[args.buf].filetype
-				if ft == "snacks_dashboard" then
+				if ft == "snacks_dashboard" or ft == "checkhealth" then
 					vim.o.laststatus = 0
 					vim.schedule(function()
 						local ok, lualine = pcall(require, "lualine")
