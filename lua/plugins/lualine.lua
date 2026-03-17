@@ -1,51 +1,36 @@
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
-	lazy = true,
-	-- don't show lualine on dashboard
 	init = function()
-		if vim.fn.argc(-1) == 0 then
-			vim.o.laststatus = 0
-		end
-
 		vim.api.nvim_create_autocmd("FileType", {
 			callback = function(args)
 				local ft = vim.bo[args.buf].filetype
-				if ft == "snacks_dashboard" or ft == "checkhealth" then
+				if ft == "snacks_dashboard" then
 					vim.o.laststatus = 0
-					vim.schedule(function()
-						local ok, lualine = pcall(require, "lualine")
-						if ok then
-							lualine.hide({
-								place = { "statusline", "tabline", "winbar" },
-								unhide = false,
-							})
-						end
-					end)
 				elseif ft ~= "" then
 					vim.o.laststatus = 2
 					if not package.loaded["lualine"] then
 						require("lazy").load({ plugins = { "lualine.nvim" } })
-					else
-						local ok, lualine = pcall(require, "lualine")
-						if ok then
-							lualine.hide({
-								place = { "statusline", "tabline", "winbar" },
-								unhide = true,
-							})
-						end
 					end
 				end
 			end,
 		})
+		vim.api.nvim_create_autocmd("ColorScheme", {
+			callback = function()
+				vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE", fg = "NONE" })
+				vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "NONE", fg = "NONE" })
+			end,
+		})
+		vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE", fg = "NONE" })
+		vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "NONE", fg = "NONE" })
 	end,
 	config = function()
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
 				theme = "auto",
-				component_separators = { left = "", right = "" },
-				section_separators = { left = "", right = "" },
+				component_separators = { left = "/", right = "\\" },
+				section_separators = { left = "", right = "" },
 				disabled_filetypes = {
 					statusline = {
 						"snacks_dashboard",
@@ -62,7 +47,7 @@ return {
 					statusline = 1000,
 					tabline = 1000,
 					winbar = 1000,
-					refresh_time = 16, -- ~60fps
+					refresh_time = 16,
 					events = {
 						"WinEnter",
 						"BufEnter",
@@ -83,9 +68,9 @@ return {
 					icons_enabled = true,
 					icon = "",
 				} },
-				lualine_b = { "branch", "diff", "diagnostics" },
-				lualine_c = { "filename" },
-				lualine_x = { "encoding", "fileformat", "filetype" },
+				lualine_b = { "branch" },
+				lualine_c = { "filename", "diagnostics" },
+				lualine_x = { "filetype" },
 				lualine_y = { "progress" },
 				lualine_z = { "location" },
 			},
