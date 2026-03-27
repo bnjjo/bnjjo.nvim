@@ -60,10 +60,6 @@ vim.o.mousescroll = "ver:1,hor:1"
 -- Confirm before failing operations due to unsaved changes
 vim.o.confirm = true
 
--- hide command line when not in use
-vim.opt.cmdheight = 0
-vim.opt.shortmess:append("c") -- hides some cmdline noise
-
 -- Indentation settings
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
