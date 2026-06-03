@@ -68,4 +68,8 @@ vim.opt.smarttab = true
 vim.opt.smartindent = false
 vim.opt.autoindent = true
 
+-- Color column
 vim.opt.colorcolumn = "100"
+
+-- Hide cmdline
+vim.o.cmdheight = 0
