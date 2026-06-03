@@ -34,8 +34,8 @@ vim.o.signcolumn = "yes"
 -- Faster updates (CursorHold, swap file writes)
 vim.o.updatetime = 250
 
--- Faster key sequence timeout
-vim.o.timeoutlen = 300
+-- Longer key sequence timeout
+vim.o.timeoutlen = 3000
 
 -- Split window behavior
 vim.o.splitright = true
