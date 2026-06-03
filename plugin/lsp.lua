@@ -6,7 +6,7 @@ vim.pack.add({
 require("fidget").setup({})
 
 ---@type table<string, vim.lsp.Config>
-local servers = {}
+local servers = require("langs").servers
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
