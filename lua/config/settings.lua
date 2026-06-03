@@ -70,6 +70,3 @@ vim.opt.autoindent = true
 
 -- Color column
 vim.opt.colorcolumn = "100"
-
--- Hide cmdline
-vim.o.cmdheight = 0
