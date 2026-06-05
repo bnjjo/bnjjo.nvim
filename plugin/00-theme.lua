@@ -1,4 +1,9 @@
-vim.pack.add({ "https://github.com/rose-pine/neovim" })
+vim.pack.add({
+	{
+		name = "rose-pine",
+		src = "https://github.com/rose-pine/neovim",
+	},
+})
 
 require("rose-pine").setup({
 	styles = {
