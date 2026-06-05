@@ -28,5 +28,16 @@ require("tv").setup({
 				["<C-y>"] = h.copy_to_clipboard, -- Copy matches to clipboard
 			},
 		},
+		-- `nvim`: fuzzy find neovim config files
+		nvim = {
+			keybinding = "<leader>sn",
+			handlers = {
+				["<CR>"] = h.open_as_files, -- default: open selected files
+				["<C-q>"] = h.send_to_quickfix, -- send to quickfix list
+				["<C-s>"] = h.open_in_split, -- open in horizontal split
+				["<C-v>"] = h.open_in_vsplit, -- open in vertical split
+				["<C-y>"] = h.copy_to_clipboard, -- copy paths to clipboard
+			},
+		},
 	},
 })
