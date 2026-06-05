@@ -27,7 +27,7 @@ local layout = {
 	type = "group",
 	val = {
 		dashboard.section.header,
-		{ type = "padding", val = 3 },
+		{ type = "padding", val = 2 },
 		dashboard.section.buttons,
 		dashboard.section.footer,
 	},
