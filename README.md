@@ -11,3 +11,7 @@ git clone https://github.com/bnjjo/bnjjo.nvim.git "${XDG_CONFIG_HOME:-$HOME/.con
 ```
 git clone -b macos https://github.com/bnjjo/bnjjo.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 ```
+
+## minimum requirements
+* a C compiler
+* tree-sitter-cli
