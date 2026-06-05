@@ -1,6 +1,7 @@
--- { import = 'custom.plugins' }
+require("langs")
+
 require("config.autocmds")
 require("config.settings")
 require("config.keymaps")
 
-require("langs")
+require("custom.plugins")
