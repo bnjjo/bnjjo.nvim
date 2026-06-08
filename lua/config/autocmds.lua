@@ -57,3 +57,11 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.keymap.set("n", "<Esc>", "<cmd>close<cr>", { buffer = ev.buf, silent = true })
 	end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "alpha",
+	callback = function()
+		vim.opt.statusline = "%#lualine_transparent#"
+		vim.opt_local.cmdheight = 0
+	end,
+})

@@ -31,7 +31,7 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.o.inccommand = "split" -- Live preview of substitutions
 vim.o.cursorline = true -- Highlight current line
 vim.o.scrolloff = 10 -- Minimum lines to keep above/below cursor
-vim.o.mousescroll = "ver:1,hor:1" -- Makes scrolling smoother
+vim.o.mousescroll = "ver:3,hor:1" -- Makes scrolling smoother
 vim.o.confirm = true -- Confirm before failing operations due to unsaved changes
 -- Indentation settings
 vim.opt.tabstop = 4
