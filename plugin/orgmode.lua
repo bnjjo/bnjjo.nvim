@@ -1,0 +1,13 @@
+vim.pack.add({ "https://github.com/nvim-orgmode/orgmode" })
+
+require("orgmode").setup({
+	org_agenda_files = "~/orgfiles/**/*",
+	org_default_notes_file = "~/orgfiles/refile.org",
+	mappings = {
+		org = {
+			org_meta_return = "<C-CR>",
+		},
+	},
+})
+
+vim.lsp.enable("org")
